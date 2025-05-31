@@ -1,0 +1,668 @@
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo (master)
+$ git config user.name
+bettu
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo (master)
+$ git config user.email
+bettumk@gmail.com
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo (master)
+$ git config --global user.name "Bettumk"
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo (master)
+$ git config --global user.email "bettumk@gamil.com"
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo (master)
+$ git config user.name
+Bettumk
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo (master)
+$ git config user.email
+bettumk@gamil.com
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo (master)
+$ mkdir project1
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo (master)
+$ cd project1
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ git init
+Initialized empty Git repository in C:/Users/Hp/OneDrive/Desktop/repo/project1/.git/
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ ls -a
+./  ../  .git/
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ vi file1.txt
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ ls
+file1.txt
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ cat file1.txt
+Hello Git
+
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ echo "hello Bettu"
+hello Bettu
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ echo "hello Bettu" > file2.txt
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ ls
+file1.txt  file2.txt
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ cat file2.txt
+hello Bettu
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file1.txt
+        file2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ git add .
+warning: in the working copy of 'file1.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'file2.txt', LF will be replaced by CRLF the next time Git touches it
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file1.txt
+        new file:   file2.txt
+
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ git add file1.txt
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ git commit -m "first commit"
+[master (root-commit) b07c850] first commit
+ 2 files changed, 3 insertions(+)
+ create mode 100644 file1.txt
+ create mode 100644 file2.txt
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ git remote add origin https://github.com/Bettumk/project1.git
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ git remote -v
+origin  https://github.com/Bettumk/project1.git (fetch)
+origin  https://github.com/Bettumk/project1.git (push)
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ ls
+file1.txt  file2.txt
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ git branch
+* master
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/Bettumk/project1.git'
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ git push -u origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 264 bytes | 264.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Bettumk/project1.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ git clone https://github.com/Bettumk/project1.git
+Cloning into 'project1'...
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 7 (delta 0), reused 4 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (7/7), done.
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ ls
+file1.txt  file2.txt  project1/
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ echo "new line" >> file2.txt
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ cat file2.txt
+hello Bettu
+new line
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ cat file1.txt
+Hello Git
+
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ ls
+file1.txt  file2.txt  project1/
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ git add file2.txt
+warning: in the working copy of 'file2.txt', LF will be replaced by CRLF the next time Git touches it
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ git commit -m "added a newline"
+[master fc4d41e] added a newline
+ 1 file changed, 1 insertion(+)
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ git push
+To https://github.com/Bettumk/project1.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/Bettumk/project1.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ git push origin master
+To https://github.com/Bettumk/project1.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/Bettumk/project1.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ git push origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/Bettumk/project1.git'
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        project1/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1 (master)
+$ cd project1
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ ls
+file1.txt  file2.txt
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git log
+commit 32c584d81dffd9adae535b00a51e586d96cae0fa (HEAD -> master, origin/master, origin/HEAD)
+Author: Bettumk <bettumk@gmail.com>
+Date:   Thu May 29 11:38:44 2025 +0530
+
+    Update file1.txt
+
+commit b07c850c0579269a944154291b9ab37d49e3e377
+Author: Bettumk <bettumk@gamil.com>
+Date:   Thu May 29 11:33:21 2025 +0530
+
+    first commit
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git branch b1
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git branch
+  b1
+* master
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git switch b1
+Switched to branch 'b1'
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git checkout -b b2
+Switched to a new branch 'b2'
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b2)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git checkout main
+error: pathspec 'main' did not match any file(s) known to git
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git checkout b1
+Switched to branch 'b1'
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ ls
+file1.txt  file2.txt
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ git merge feature
+merge: feature - not something we can merge
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ git merge master
+Already up to date.
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ vi file1.txt
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git switch b1
+M       file1.txt
+Switched to branch 'b1'
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ ls
+file1.txt  file2.txt
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ cat file1.txt
+Hello Git
+Hello chandu
+11222
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ vi file1.txt
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ git checkout master
+M       file1.txt
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ cat file1.txt
+Hello Git
+Hello chandu
+11222
+000000
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git merge b1
+Already up to date.
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git merge b2
+Already up to date.
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git add .
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git commit -m "updateded"
+[master 56e765a] updateded
+ 1 file changed, 2 insertions(+)
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git merge b1
+Already up to date.
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ vi file1.txt
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git add .
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git commit -m "changed"
+[master f393d7d] changed
+ 1 file changed, 1 insertion(+)
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git checkout b1
+Switched to branch 'b1'
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ cat file1.txt
+Hello Git
+Hello chandu
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ ls
+file1.txt  file2.txt
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ git status
+On branch b1
+nothing to commit, working tree clean
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ ls
+file1.txt  file2.txt
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ cat file1.txt
+Hello Git
+Hello chandu
+11222
+000000
+iiiiiiii
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git checkout b1
+Switched to branch 'b1'
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ git merge master
+Updating 32c584d..f393d7d
+Fast-forward
+ file1.txt | 3 +++
+ 1 file changed, 3 insertions(+)
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ cat file1.txt
+Hello Git
+Hello chandu
+11222
+000000
+iiiiiiii
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ cat file1.txt
+Hello Git
+Hello chandu
+11222
+000000
+iiiiiiii
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ vi file2.txt
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git add .
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git commit -m "file2 changed"
+[master 0d6a582] file2 changed
+ 1 file changed, 1 insertion(+)
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git merge b1
+Already up to date.
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git checkout b1
+Switched to branch 'b1'
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ cat file2.txt
+hello Bettu
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ git merge master
+Updating f393d7d..0d6a582
+Fast-forward
+ file2.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ cat file2.txt
+hello Bettu
+11111111
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ vi file2.txt
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ git add .
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ git commit -m "file2 changed"
+[b1 7f74713] file2 changed
+ 1 file changed, 1 insertion(+)
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ vi file2.txt
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git add .
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git commit -m "file2 changed"
+[master 1016514] file2 changed
+ 1 file changed, 1 insertion(+)
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git merge b1
+Auto-merging file2.txt
+CONFLICT (content): Merge conflict in file2.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master|MERGING)
+$ cat file2.txt
+hello Bettu
+11111111
+<<<<<<< HEAD
+3333333
+=======
+2222222
+>>>>>>> b1
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master|MERGING)
+$ vi file2.txt
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master|MERGING)
+$ git merge b1
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master|MERGING)
+$ cat file2.txt
+hello Bettu
+11111111
+3333333
+2222222
+
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master|MERGING)
+$ git add .
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master|MERGING)
+$ git commit -m "merge solved"
+[master 59de2c8] merge solved
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git merge b1
+Already up to date.
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ cat file2.txt
+hello Bettu
+11111111
+3333333
+2222222
+
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git switch b1
+Switched to branch 'b1'
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ cat file2.txt
+hello Bettu
+11111111
+2222222
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ git merge master
+Updating 7f74713..59de2c8
+Fast-forward
+ file2.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ cat file2.txt
+hello Bettu
+11111111
+3333333
+2222222
+
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (b1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 6 commits.
+  (use "git push" to publish your local commits)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+From https://github.com/Bettumk/project1
+ * branch            master     -> FETCH_HEAD
+Merge made by the 'ort' strategy.
+ Git commands | 587 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 587 insertions(+)
+ create mode 100644 Git commands
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$ git push -u origin master
+Enumerating objects: 26, done.
+Counting objects: 100% (24/24), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (20/20), 1.81 KiB | 142.00 KiB/s, done.
+Total 20 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/Bettumk/project1.git
+   f118400..2f0ce13  master -> master
+branch 'master' set up to track 'origin/master'.
+
+Hp@DESKTOP-02IFNOO MINGW64 ~/OneDrive/Desktop/repo/project1/project1 (master)
+$
